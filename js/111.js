@@ -88,6 +88,9 @@ $(function () {
 
 
     $(".btn").on("click", function () {
+        
+        console.log($("hour"));
+        $(".f18").show()
         $("#sp1").text(time.getFullYear() + "/" + (time.getMonth() + 1) + "/" + time.getDate());
         $("#sp2").text(arr[time.getDay()]);
         area = $(".form-control").val();
@@ -117,7 +120,9 @@ $(function () {
                 }
 
             }
+            
         })
+        $(".hour ul ").empty("")
         api.ajax({
             type: 'get',
             url: 'https://api.heweather.net/s6/weather/forecast',
@@ -147,7 +152,7 @@ $(function () {
 
             }
         })
-
+        $(".days ul ").empty("")
         api.ajax({
             type: 'get',
             url: 'https://api.heweather.net/s6/weather/now',
